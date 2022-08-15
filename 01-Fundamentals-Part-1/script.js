@@ -282,10 +282,6 @@ console.log(typeof NaN);
 
 console.log(String(23), 23);
 
-*/
-
-
-/*
 
 // TYPE COERCION:
 
@@ -303,7 +299,7 @@ console.log(n);
 
 /*
 
-// TRUTHY AND FALSY VALUES
+// TRUTHY AND FALSY VALUES:
 
 console.log(Boolean(0));
 console.log(Boolean(undefined));
@@ -500,7 +496,7 @@ console.log('\n');
 
 /*
 
-// SWITCH STATEMENST
+// SWITCH STATEMENT:
 
 const day = 'saturday';
 
