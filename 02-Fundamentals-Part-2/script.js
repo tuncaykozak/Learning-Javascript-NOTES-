@@ -124,3 +124,68 @@ console.log(yearsUntilRetirement2(1954, 'Osman Nuri'));
 // ARRAYS:
 
 */
+const friend1 = 'Ahmed';
+const friend2 = 'Mahmud';
+const friend3 = 'Mehmed';
+
+const friends = ['Ahmed', 'Mahmud', 'Mehmed'];
+console.log(friends);
+
+const years = new Array(1991, 1995, 1987);
+console.log(years);
+
+console.log(friends[0]); // first element
+console.log(friends[2]); // last element
+
+console.log(friends.length); // 3 elements
+console.log(friends[friends.length - 1]); // last element
+
+friends[2] = 'Davud'; // mutate?
+console.log(friends);
+
+const me = ['Tuncay', 'KOZAK', 2022 - 1991, 'Engineer', friends]; // Array in Array
+console.log(me);
+
+
+const calcAge = function (birthYear) {
+  return 2022 - birthYear;
+}
+
+const birthYears = [1991, 1995, 1987, 2022, 1954];
+
+console.log(calcAge(birthYears)); // NaN
+console.log(birthYears - 10); //NaN
+
+const age = calcAge(birthYears[0]);
+console.log(age);
+
+const ages = [calcAge(birthYears[0]), calcAge(birthYears[1]), calcAge(birthYears[2])];
+console.log(ages);
+
+
+const myFriends = ['Ahmed', 'Mahmud', 'Mehmed'];
+console.log(myFriends);
+
+myFriends.push('Ali');
+console.log(myFriends);
+
+const newLength = myFriends.push('Murad');
+console.log(newLength);
+
+myFriends.unshift('Selim'); // added first place
+console.log(myFriends);
+
+const popped = myFriends.pop(); // last element is removed ('Murad')
+console.log(myFriends);
+console.log(popped);
+
+myFriends.shift(); // first element is removed ('Selim')
+console.log(myFriends);
+
+console.log(myFriends.indexOf('Mahmud')); // 1 -- (Second place 0,1)
+
+console.log(myFriends.includes('Ali')); // true
+
+if (myFriends.includes('Murad')) { // false
+  console.log('You have a friend called Murad');
+}
