@@ -118,12 +118,47 @@ console.log(yearsUntilRetirement2(1954, 'Osman Nuri'));
 */
 
 
+/*
+
+// CODE CHALLENGE:
+
+const calcAverage = (score1, score2, score3) => {
+  const average = (score1 + score2 + score3) / 3;
+  return average;
+}
+
+let avgDolphins = calcAverage(44, 23, 71);
+console.log(avgDolphins);
+
+let avgKoalas = calcAverage(65, 54, 49);
+console.log(avgKoalas);
+
+
+const checkWinner = (avgDolphins, AvgKoalas) => {
+  if (avgDolphins > avgKoalas)
+    console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+  else
+    console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+}
+
+checkWinner(avgDolphins, avgKoalas);
+
+avgDolphins = calcAverage(85, 54, 41);
+console.log(avgDolphins);
+
+avgKoalas = calcAverage(23, 34, 27);
+console.log(avgKoalas);
+
+checkWinner(avgDolphins, avgKoalas);
+
+*/
+
+
 
 /*
 
 // ARRAYS:
 
-*/
 const friend1 = 'Ahmed';
 const friend2 = 'Mahmud';
 const friend3 = 'Mehmed';
@@ -189,3 +224,239 @@ console.log(myFriends.includes('Ali')); // true
 if (myFriends.includes('Murad')) { // false
   console.log('You have a friend called Murad');
 }
+
+*/
+
+
+
+/*
+
+// CODE CHALLENGE:
+
+const calcTip = (bill) => {
+  let tip;
+  // if (bill > 50 && bill < 300)
+  //   tip = bill * 0.15;
+  // else
+  //   tip = bill * 0.2;
+
+  (bill > 50 && bill < 300) ? (tip = bill * 0.15) : (tip = bill * 0.2);
+
+  return tip;
+}
+
+console.log(calcTip(100));
+//console.log(calcTip(400));
+//console.log(calcTip(10));
+
+const bills = [125, 555, 44];
+console.log(bills);
+
+//let tips = new Array();
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+console.log(tips);
+
+const total = [tips[0] + bills[0], tips[1] + bills[1], tips[2] + bills[2]];
+console.log(total);
+
+*/
+
+
+
+/*
+
+// OBJECTS:
+
+const tuncayArray = [
+  'Tuncay',
+  'KOZAK',
+  2022 - 1991,
+  'Engineer',
+  ['Mahmud', 'Ahmed', 'Murad']
+];
+
+const tuncay = {
+  firstName: 'Tuncay',
+  lastName: 'KOZAK',
+  age: 2022 - 1991,
+  job: 'Engineer',
+  friends: ['Mahmud', 'Ahmed', 'Murad']
+}
+
+console.log(tuncay);
+console.log(tuncay.lastName);
+console.log(tuncay['lastName']);
+
+const nameKey = 'Name';
+console.log(tuncay['first' + nameKey]);
+console.log(tuncay['last' + nameKey]);
+
+// console.log(tuncay.'firstName');
+// console.log(tuncay.'first' + nameKey);
+
+const interestedIn = prompt('What do you want to know about me?');
+//console.log(tuncay[interestedIn]);
+
+if (tuncay[interestedIn])
+  console.log(tuncay[interestedIn]);
+else console.log('Nothing to show');
+
+tuncay.location = 'Eskisehir';
+tuncay['twitter'] = '@tuncaykozak';
+console.log(tuncay);
+
+console.log(`${tuncay.firstName} has ${tuncay.friends.length} friends and his best friend is called ${tuncay.friends[0]}.`);
+
+*/
+
+
+
+/*
+
+// OBJECT METHODS:
+
+const tuncay = {
+  firstName: 'Tuncay',
+  lastName: 'KOZAK',
+  birthYear: 1991,
+  job: 'Engineer',
+  friends: ['Mahmud', 'Ahmed', 'Murad'],
+  hasDriversLicense: false,
+
+  // calcAge: function (birthYear) {
+  //   return 2022 - birthYear;
+  // }
+
+  calcAge: function () {
+    //console.log(this);
+    this.age = 2022 - this.birthYear;
+    return this.age;
+  }
+}
+
+//console.log(tuncay.calcAge(1991));
+//console.log(tuncay['calcAge'](1991));
+
+console.log(tuncay.calcAge());
+
+// tuncay.age = tuncay.calcAge();
+// console.log(tuncay.age);
+
+console.log(`Tuncay has${tuncay.hasDriversLicense ? '' : ' not'} a driver's license.`);
+
+*/
+
+
+
+/*
+
+// LOOPS:
+
+for (let rep = 1; rep <= 10; rep++) {
+  // console.log('Lifting weight repetition-' + rep);
+  console.log(`Lifting weight repetition-${rep}`);
+}
+
+const tuncayArray = [
+  'Tuncay',
+  'KOZAK',
+  2022 - 1991,
+  'Engineer',
+  ['Mahmud', 'Ahmed', 'Murad'],
+  true
+];
+
+for (let i = 0; i < tuncayArray.length; i++) {
+  console.log(tuncayArray[i], typeof tuncayArray[i]);
+}
+
+const types = [];
+
+for (let i = 0; i < tuncayArray.length; i++) {
+  types[i] = typeof tuncayArray[i];
+}
+
+console.log(types);
+
+
+const years = [1991, 2007, 1954, 2002];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages[i] = 2022 - years[i];
+}
+console.log(ages);
+
+for (let i = 0; i < tuncayArray.length; i++) {
+  if (typeof tuncayArray[i] != 'string') continue; // showing only strings
+  console.log(tuncayArray[i], typeof tuncayArray[i]);
+}
+
+for (let i = 0; i < tuncayArray.length; i++) {
+  if (typeof tuncayArray[i] === 'number') break; // showing until first number type elemnet (except it)
+  console.log(tuncayArray[i], typeof tuncayArray[i]);
+}
+
+for (let i = tuncayArray.length - 1; i >= 0; i--) { // reverse order
+  console.log(tuncayArray[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`Starting exercise ${exercise}:`);
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Exercise-${exercise} : Repetition-${rep}`);
+  }
+}
+
+let rep = 1;
+while (rep <= 10) {
+  console.log(`Lifting-${rep}`);
+  rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1; // first value
+// console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled : ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log(`You rolled : ${dice} and the loop about to end...`);
+}
+
+*/
+
+
+
+/*
+
+// CODE CHALLENGE:
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+let tips = [];
+let totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+  if (bills[i] > 50 && bills[i] < 300)
+    tips[i] = (bills[i] * 0.15);
+  else
+    tips[i] = bills[i] * 0.20;
+
+  totals[i] = bills[i] + tips[i];
+}
+
+for (let i = 0; i < totals.length; i++) {
+  console.log(`Tips-${i + 1} : ${tips[i]} (Total:${totals[i]})`);
+}
+
+let average = 0;
+const calcAverage = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    average = average + arr[i];
+  }
+  //console.log(average);
+  return (average / arr.length);
+}
+
+console.log(`Average Bill : ${calcAverage(bills)}`);
+
+*/
