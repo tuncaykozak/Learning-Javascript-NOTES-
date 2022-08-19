@@ -98,7 +98,7 @@ document.querySelector('.again').addEventListener('click', function () {
 */
 
 let secretNumber = Math.trunc(Math.random() * 20 + 1);
-document.querySelector('.number').textContent = secretNumber;
+document.querySelector('.number').textContent = '?';
 let score = 20;
 let highScore = 0;
 
