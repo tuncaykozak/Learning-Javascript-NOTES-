@@ -73,6 +73,7 @@ p {
   z-index: 10;
 }
 
+/* when clicked buttons this elemnet will fill whole page with blurry except modal   */
 .overlay {
   position: absolute;
   top: 0;
