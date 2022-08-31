@@ -51,6 +51,209 @@ const restaurant = {
 
 /*
 
+// WORKING with STRINGS:
+
+const airline = "THY Air Turkey";
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log(plane[3]);
+
+console.log(airline.length);
+console.log('B737'[0]);
+
+console.log(airline.indexOf('r')); // start from 0(zero)
+console.log(airline.indexOf('Turkey'));
+
+console.log(airline.slice(4)); // Air Turkey
+console.log(airline.slice(4, 7)); // Air
+
+console.log(airline.slice(0, airline.indexOf(' '))); // THY
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // Turkey
+
+console.log(airline.slice(-6)); // Turkey (last 6 letters)
+console.log(airline.slice(0, -11)); //THY
+
+const checkMiddleSeat = function (seat) {
+  // B and E are midle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E')
+    console.log('You got the middle seat 💺');
+  else
+    console.log('You got lucky ✈');
+}
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('Tuncay')); // String
+console.log(typeof new String('Tuncay')); // object
+
+///
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+const email = 'hello@tuncay.com';
+const loginEmail = 'Hello@Tuncay.com \n';
+
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim();
+console.log(trimmedEmail);
+console.log(loginEmail.toLowerCase().trim()); // same trimmed Email
+
+console.log(email === trimmedEmail); // true
+
+const price = '288,97$';
+const priceTR = price.replace('$', 'TL').replace(',', '.');
+console.log(priceTR.replace('88', '99')); // long way
+console.log(priceTR.replace(/8/g, '9')); // all 8
+
+const plane2 = 'A320neo';
+console.log(plane2.includes('neo')); // true
+console.log(plane2.startsWith('A3')); // true
+console.log(plane2.endsWith('z')); // false
+
+///
+
+console.log('a+very+nice+string'.split('+')); // an array with 4 words
+
+const [firstName, lastName] = 'Tuncay Kozak'.split(' ');
+console.log('Mr.', firstName, lastName.toUpperCase()); // Mr. Tuncay KOZAK
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  let capitalizedName = [];
+  for (const n of names) {
+    capitalizedName.push(n[0].toUpperCase() + n.slice(1));
+  }
+  return capitalizedName;
+}
+
+console.log(...capitalizeName('ricardo alvares de santos'));
+
+const capitalizeName2 = function (name) {
+  const names = name.split(' ');
+  let namesUpper = [];
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+}
+
+capitalizeName2('tom marvolo riddle');
+
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+')); // ++++++++++++Go to gate 23!
+console.log(message.padStart(25, '+').padEnd(40, '+')); // ++++++++++++Go to gate 23!+++++++++++++
+
+
+const maskCreditCard = function (number) {
+  const str = number + ''; // convert to String
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+}
+
+console.log(maskCreditCard(234123412341));
+console.log(maskCreditCard('2134123421342'));
+
+*/
+
+
+
+/*
+
+// MAPS:
+
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+console.log(rest.set(2, 'Lisbon, Portugal'));
+
+rest
+  .set('categories', ['Italian', 'Pizzeria'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open')
+  .set(false, 'We are closed');
+
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 21;
+// rest.get(time > rest.get('open') && time < rest.get('close')) // true || false
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+rest.delete(2); // Lisbon
+console.log(rest);
+console.log(rest.size);
+
+rest.set([1, 2], 'Test');
+console.log(rest.get([1, 2])); //undefined
+console.log(rest);
+
+const arr = [1, 2];
+rest.set(arr, 'Test');
+console.log(rest.get(arr)); // Test
+console.log(rest);
+
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+console.log(hoursMap.entries());
+console.log(...hoursMap);
+console.log(...hoursMap.keys());
+console.log(...hoursMap.values());
+
+*/
+
+
+
+/*
+
+// SETS:
+
+const ordersSet = new Set([
+  'Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza',
+]);
+
+console.log(ordersSet);
+console.log(new Set('Tuncay'));
+console.log(ordersSet.has('Pizza')); // true
+console.log(ordersSet.has('Bread')); // false
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+console.log(ordersSet); // just one of 'Garlic Bread' added
+ordersSet.delete('Risotto');
+console.log(ordersSet); // 'Risotto' deleted
+// ordersSet.clear();
+// console.log(ordersSet); // 0 elements
+
+for (const order of ordersSet) console.log(order);
+
+const staff = ['Waiter', 'Chef', 'Manager', 'Waiter', 'Chef', 'Manager'];
+console.log(staff);
+
+const staffUnique = new Set(staff); // without repetitions
+console.log(staffUnique); // set entries
+
+const staffUnique2 = [...new Set(staff)]; // without repetitions
+console.log(staffUnique2); // normal array
+
+console.log(new Set(staff).size);
+
+*/
+
+
+
+/*
+
 // OBJECT KEYS-VALUES-ENTRIES:
 
 const properties = Object.keys(openingHours);
@@ -238,7 +441,7 @@ const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]]; //really bad array
 console.log(badNewArr);
 
-const newArr = [1, 2, ...arr]; //better 
+const newArr = [1, 2, ...arr]; //better
 console.log(newArr);
 console.log(...newArr); // elements
 
@@ -337,7 +540,6 @@ console.log(p, q, r); // r is 'undefined'
 
 
 /*
-
 // CODE CHALLENGE:
 
 const game = {
@@ -382,6 +584,36 @@ const game = {
   },
 };
 
+*/
+
+
+/*
+
+// ---------- 2 ------------
+
+for (const [i, player] of game.scored.entries()) {
+  console.log(`${i + 1}. Goal: ${player}`);
+}
+
+const odds = Object.values(game.odds);
+// console.log(odds);
+let average = 0;
+for (const odd of odds) average += odd;
+average /= odds.length;
+console.log(average);
+
+for (const [team, odd] of Object.entries(game.odds)) {
+  // console.log(team, odd);
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} : ${odd}`);
+}
+
+*/
+
+/*
+
+// ---------- 1 ------------
+
 const [players1, players2] = game.players;
 console.log(players1, players2);
 console.log("");
@@ -414,5 +646,47 @@ console.log("");
 
 team1 < team2 && console.log('Team1 is more likely to win');
 team1 > team2 && console.log('Team2 is more likely to win'); // wont work
+
+*/
+
+
+
+
+/*
+
+// CODE CHALLENGE:
+
+const gameEvents = new Map([
+  [17, '⚽ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🟨 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽ GOAL'],
+  [80, '⚽ GOAL'],
+  [92, '🟨 Yellow card'],
+]);
+
+// console.log(gameEvents);
+
+const events = [...new Set(gameEvents.values())];
+console.log(...events);
+
+gameEvents.delete(64);
+
+const time = [...gameEvents.keys()].pop();
+console.log(time); // with extra time
+
+console.log(`An event happened every ${time / gameEvents.size} minutes.`);
+
+for (const [key, value] of gameEvents) { // for (const [min, event] of gameEvents)
+  if (key < 45) {
+    console.log(`[FIRST HALF] ${key}: ${value}`);
+  } else
+    console.log(`[SECOND HALF] ${key}: ${value}`);
+}
 
 */
